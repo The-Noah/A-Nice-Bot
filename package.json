@@ -23,6 +23,7 @@
   "bugs": {
     "url": "https://github.com/The-Noah/Discord-Bot/issues"
   },
+  "website": "http://anicebot.freemyip.com:8080/",
   "homepage": "https://github.com/The-Noah/Discord-Bot#readme",
   "dependencies": {
     "discord.js": "^11.4.2",

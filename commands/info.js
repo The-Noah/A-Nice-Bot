@@ -1,4 +1,4 @@
-const {version, author, homepage} = require("../package.json");
+const {version, author, website, homepage} = require("../package.json");
 
 module.exports = {
   name: "info",
@@ -11,7 +11,8 @@ module.exports = {
     data.push("**Status**: Online");
     data.push(`**Bot**: A Nice Bot v${version}`);
     data.push(`**Author**: ${author}`);
-    data.push(`**Website**: ${homepage}`);
+    data.push(`**Website**: ${website}`);
+    data.push(`**GitHub**: ${homepage}`);
     data.push("---------------------------");
     data.push(`**Name**: ${process.title}`);
     data.push(`**Platform**: ${process.platform}`);
