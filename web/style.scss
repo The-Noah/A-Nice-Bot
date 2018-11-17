@@ -1,0 +1,72 @@
+$border-radius: 4px;
+
+*{
+  color: #FFF;
+  text-align: center;
+  margin: auto;
+}
+body, h1, h2, h3, h4, h5, h6{margin:0}
+body{
+  background: #191A1D;
+  font-family: "Helvetica", "Arial", "sans-serif";
+  font-size: 18px;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+#header{
+  padding: 64px;
+  margin-bottom: 64px;
+  top: 0;
+  line-height: 1.1;
+}
+#footer{
+  width: 100vw;
+  padding: 8px;
+  bottom: 0;
+}
+#readme{
+  width: 50vw;
+  background: #292A2D;
+  padding: 32px 64px;
+  margin: 128px auto;
+  font-size: 16px;
+  border-radius: $border-radius;
+
+  h1, h2, h3, h4, h5, h6{
+    width: 80%;
+    margin: auto;
+    border-bottom: 1px solid #444;
+  }
+}
+code{
+  padding: 0 4px;
+  background: #444;
+  font-family: "monospace";
+  font-size: 16px;
+  border-radius: $border-radius;
+}
+.button{
+  width: 200px;
+  background: #7289DA;
+  padding: 12px 24px;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: $border-radius;
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+}.button:hover{background: #8299EA}.button:focus{background: #6279CA}
+#buttons *{
+  margin: 64px auto;
+}
+.small{
+  max-width: 150px;
+  padding: 4px 8px;
+  font-size: 14px;
+}
+hr{
+  width: 90%;
+  border: 1px solid #555;
+  margin: 32px;
+}

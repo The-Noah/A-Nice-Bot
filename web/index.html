@@ -10,34 +10,19 @@
       A Nice B<img src="avatar.png" width="32">t
     </div>
   </div>
-  <a id="add" href="https://discordapp.com/api/oauth2/authorize?client_id=512763845400330240&permissions=67168322&scope=bot">ADD TO SERVER</a>
-  <style>
-    *{
-      color: #FFF;
-    }
-    body, h1, h2, h3, h4, h5, h6{margin:0}
-    body{
-      background: #191A1D;
-      text-align:center;
-      font-family: "Helvetica", "Arial", "sans-serif";
-      line-height: 1.5;
-    }
-    #header{
-      padding: 64px;
-      line-height: 1.1;
-    }
-    #add{
-      width: 180px;
-      background: #7289DA;
-      padding: 12px 24px;
-      font-size: 18px;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: 200ms;
-      transition-timing-function: ease-in-out;
-    }
-    #add:hover{background: #8299EA}
-    #add:focus{background: #6279CA}
-  </style>
+  <div id="buttons">
+    <a class="button" target="_blank" href="https://discordapp.com/api/oauth2/authorize?client_id=512763845400330240&permissions=67168322&scope=bot">Link To Discord</a>
+    <a class="button" target="_blank" href="https://discordapp.com/api/oauth2/authorize?client_id=512763845400330240&permissions=67168322&scope=bot">Invite to Server</a>
+  </div>
+  <div id="readme">
+    <b style="font-size:46px">README</b><br>
+    <a class="button small" target="_blank" href="https://github.com/The-Noah/A-Nice-Bot#readme">View On GitHub</a>
+    <hr>
+    {$ readme $}
+  </div>
+  <div id="footer">
+    <span style="color:#F00;font-size:12px">Website is under active development</span>
+  </div>
+  <style>{$ style $}</style>
 </body>
 </html>

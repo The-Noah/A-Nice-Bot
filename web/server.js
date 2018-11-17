@@ -1,8 +1,11 @@
 const http = require("http");
 const fs = require("fs");
 
+const markdown = require("markdown").markdown; // markdown to HTML converter
+
 const port = 8080;
 
+// cache the avatar image so then we don't have to read it each time from the disk
 const avatarData = fs.readFileSync("../avatar.png");
 
 http.createServer((req, res) => {
@@ -14,7 +17,9 @@ http.createServer((req, res) => {
 
   if(req.url === "/"){
     responseCode = 200;
-    content = fs.readFileSync("./index.html");
+    content = fs.readFileSync("./index.html").toString();
+    content = content.replace(/{\$ readme \$}/gi, markdown.toHTML(fs.readFileSync("../README.md").toString()));
+    content = content.replace(/{\$ style \$}/gi, fs.readFileSync("./style.min.css").toString());
   }else if(req.url === "/avatar.png"){
     responseCode = 200;
     contentType = "image/png";
