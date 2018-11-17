@@ -6,11 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node .",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "auto-start": "nodemon -e . -x \"npm run start\"",
+    "web": "cd web && node server.js",
+    "auto-web": "nodemon -e . -x \"npm run web\"",
+    "sass": "node node_modules/node-sass/bin/node-sass ./web/style.scss ./web/style.css && node ./web/clean-css.js ./web/style.css",
+    "auto-sass": "nodemon -e *.scss -x \"npm run sass\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/The-Noah/Discord-Bot.git"
+    "url": "git+https://github.com/The-Noah/A-Nice-Bot.git"
   },
   "keywords": [
     "discord",
@@ -21,12 +26,18 @@
   "author": "The Noah",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/The-Noah/Discord-Bot/issues"
+    "url": "https://github.com/The-Noah/A-Nice-Bot/issues"
   },
   "website": "http://anicebot.freemyip.com:8080/",
-  "homepage": "https://github.com/The-Noah/Discord-Bot#readme",
+  "homepage": "https://github.com/The-Noah/A-Nice-Bot#readme",
   "dependencies": {
     "discord.js": "^11.4.2",
+    "markdown": "^0.5.0",
     "node-fetch": "^2.3.0"
+  },
+  "devDependencies": {
+    "clean-css": "^4.2.1",
+    "node-sass": "^4.10.0",
+    "nodemon": "^1.18.6"
   }
 }
