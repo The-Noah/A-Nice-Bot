@@ -8,7 +8,7 @@ Created by The Noah.
 
 ## Installation
 
-Clone or download this repository, and navigate to that directory in your terminal or command prompt. Then run the following `npm install` to install all of the dependencies.
+Clone or download this repository, and navigate to that directory in your terminal or command prompt. Then run `npm install` to install all of the dependencies.
 
 ## Running
 
