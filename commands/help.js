@@ -1,29 +1,32 @@
 const {prefix} = require("../config.json");
+const {website} = require("../package.json");
+
+const Discord = require("discord.js");
 
 module.exports = {
   name: "help",
   description: "A list of all available commands, or info about a specific command",
   aliases: ["commands"],
-  usage: "[command name]",
+  usage: "[command]",
   execute(message, args){
-    const data = [];
     const {commands} = message.client;
 
+    const embed = new Discord.RichEmbed()
+      .setColor("#0099FF")
+      .setTitle("Help")
+      .setURL(website)
+      .attachFile("./avatar.png")
+      .setThumbnail("attachment://avatar.png")
+      .setTimestamp();
+
     if(!args.length){
-      data.push("Here's a list of all available commands\n```");
-      data.push(commands.map(command => command.name).join(", "));
-      data.push(`\`\`\`\nYou can send \`${prefix}help [command name]\` to get info on a specific command`);
+      embed.setDescription(`You can send \`${prefix}help [command]\` to get info on a specific command.`);
 
-      return message.channel.send(data, {split: true});
+      commands.forEach(command => {
+        embed.addField(command.name, `\`${prefix}${command.name} ${command.usage}\`\n${command.description}`);
+      });
 
-      /*return message.author.send(data, {split: true}).then(() => {
-        if(message.channel.type !== "dm"){
-          message.reply("I've sent you a DM with all my commands");
-        }
-      }).catch(err => {
-        console.error(`Could not send help DM to ${message.author.tag}\n`, error);
-        message.reply("It seems I can't DM you! Do you have DMs disabled?");
-      });*/
+      return message.channel.send(embed);
     }
 
     const name = args[0].toLowerCase();
@@ -33,20 +36,17 @@ module.exports = {
       return message.reply("That's not a valid command!");
     }
 
-    data.push(`**Name**: ${command.name}`);
+    embed.addField(`**${command.name}**`, command.description);
 
-    if(command.description){
-      data.push(`**Description**: ${command.description}`);
-    }
     if(command.aliases){
-      data.push(`**Aliases**: ${command.aliases.join(", ")}`);
+      embed.addField("Aliases", `\`${command.aliases.join(", ")}\``);
     }
     if(command.usage){
-      data.push(`**Usage**: \`${prefix}${command.name} ${command.usage}\``);
+      embed.addField("Usage", `\`${prefix}${command.name} ${command.usage}\``);
     }
 
-    data.push(`**Cooldown**: ${command.cooldown || 3} second(s)`);
+    embed.addField("Cooldown", `${command.cooldown || 3} seconds`);
 
-    message.channel.send(data, {split: true});
+    message.channel.send(embed);
   },
 };
