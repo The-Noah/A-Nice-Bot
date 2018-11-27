@@ -9,8 +9,8 @@
     "lint": "eslint .",
     "auto-start": "nodemon -e . -x \"npm run start\"",
     "web": "cd web && node server.js",
-    "auto-web": "nodemon -e . -x \"npm run web\"",
-    "sass": "node node_modules/node-sass/bin/node-sass ./web/style.scss ./web/style.css && node ./web/clean-css.js ./web/style.css",
+    "auto-web": "nodemon -e ./web/server.js -x \"npm run web\"",
+    "sass": "node node_modules/node-sass/bin/node-sass ./web/style.scss ./web/style.css && node ./web/minify-css.js ./web/style.css",
     "auto-sass": "nodemon -e *.scss -x \"npm run sass\""
   },
   "repository": {
@@ -32,8 +32,11 @@
   "homepage": "https://github.com/The-Noah/A-Nice-Bot#readme",
   "dependencies": {
     "discord.js": "^11.4.2",
+    "form-data": "^2.3.3",
     "markdown": "^0.5.0",
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.3.0",
+    "node-json-db": "^0.9.1",
+    "node-persist": "^2.1.0"
   },
   "devDependencies": {
     "clean-css": "^4.2.1",
