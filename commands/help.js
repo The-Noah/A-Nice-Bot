@@ -23,7 +23,7 @@ module.exports = {
       embed.setDescription(`You can send \`${prefix}help [command]\` to get info on a specific command.`);
 
       commands.forEach(command => {
-        embed.addField(command.name, `\`${prefix}${command.name} ${command.usage}\`\n${command.description}`);
+        embed.addField(command.name, `\`${prefix}${command.name} ${command.usage || ""}\`\n${command.description}`);
       });
 
       return message.channel.send(embed);
