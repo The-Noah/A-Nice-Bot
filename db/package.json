@@ -1,0 +1,20 @@
+{
+  "name": "a-nice-bot-db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node .",
+    "nodemon": "nodemon -e . -x \"node .\""
+  },
+  "author": "The Noah",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "showdown": "^1.9.0"
+  }
+}

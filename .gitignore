@@ -1,6 +1,7 @@
 node_modules
 npm-debug.log
+.vscode
 
 *.css
 config.json
-.vscode
+db/data
