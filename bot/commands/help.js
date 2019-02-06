@@ -5,7 +5,7 @@ const Discord = require("discord.js");
 
 module.exports = {
   name: "help",
-  description: "A list of all available commands, or info about a specific command",
+  description: "A list of all available commands, or info about a specific `command`",
   aliases: ["commands"],
   usage: "[command]",
   execute(message, args){
@@ -13,7 +13,7 @@ module.exports = {
 
     const embed = new Discord.RichEmbed()
       .setColor("#0099FF")
-      .setTitle("Help")
+      .setTitle(`Available commands for ${message.guild.name}`)
       .setURL(website)
       .attachFile("./avatar.png")
       .setThumbnail("attachment://avatar.png")
@@ -23,7 +23,7 @@ module.exports = {
       embed.setDescription(`You can send \`${prefix}help [command]\` to get info on a specific command.`);
 
       commands.forEach(command => {
-        embed.addField(command.name, `\`${prefix}${command.name} ${command.usage || ""}\`\n${command.description}`);
+        embed.addField(`${command.name} ${command.aliases ? "*(" + command.aliases.join(", ") + ")*" : ""}`, `\`${prefix}${command.name} ${command.usage || ""}\`\n${command.description}`);
       });
 
       return message.channel.send(embed);
@@ -47,6 +47,7 @@ module.exports = {
 
     embed.addField("Cooldown", `${command.cooldown || 3} seconds`);
 
-    message.channel.send(embed);
+    //message.channel.send(embed);
+    message.author.user.send(embed);
   },
 };

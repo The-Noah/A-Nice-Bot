@@ -1,10 +1,9 @@
 module.exports = {
   name: "clear",
-  description: "Clear some past messages",
+  description: "Clear past `message-count` messages",
   aliases: ["delete", "prune"],
-  usage: "<number of messages>",
+  usage: "message-count",
   guildOnly: true,
-  cooldown: 5,
   execute(message, args){
     if(!message.member.hasPermission("MANAGE_MESSAGES")){
       return message.reply("It doesn't look like you have permission to execute that command");

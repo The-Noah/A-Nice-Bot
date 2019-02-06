@@ -5,10 +5,12 @@ $border-radius: 4px;
   text-align: center;
   margin: auto;
 }
-body, h1, h2, h3, h4, h5, h6{margin:0}
+body, h1, h2, h3, h4, h5, h6{
+  margin:0;
+}
 body{
   background: #191A1D;
-  font-family: "Helvetica", "Arial", "sans-serif";
+  font-family: "Arial", "Helvetica", "sans-serif";
   font-size: 18px;
   line-height: 1.5;
   overflow-x: hidden;
@@ -22,7 +24,9 @@ body{
 #footer{
   width: 100vw;
   padding: 8px;
-  bottom: 0;
+  top: 0;
+  position: absolute;
+  //bottom: 0;
 }
 #readme{
   width: 50vw;
@@ -34,15 +38,20 @@ body{
 
   h1, h2, h3, h4, h5, h6{
     width: 80%;
-    margin: auto;
+    margin: 16px auto;
     border-bottom: 1px solid #444;
   }
 }
+p{
+  padding: 16px;
+}
 code{
-  padding: 0 4px;
   background: #444;
+  padding: 2px 6px;
+  display: inline-block;
   font-family: "monospace";
   font-size: 16px;
+  line-height: 1;
   border-radius: $border-radius;
 }
 .button{

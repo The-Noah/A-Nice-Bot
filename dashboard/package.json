@@ -1,0 +1,23 @@
+{
+  "name": "a-nice-bot-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node .",
+    "nodemon": "nodemon -e . -x \"node .\"",
+    "sass": "node node_modules/node-sass/bin/node-sass ./src/css/style.scss ./public/css/style.css && node ./tools/minify-css.js ./public/css/style.css",
+    "auto-sass": "nodemon -e ./src/css/*.scss -x \"npm run sass\""
+  },
+  "author": "The Noah",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "clean-css": "^4.2.1",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.9"
+  }
+}
