@@ -8,4 +8,6 @@ Clone or download this repository, and navigate to that directory in your termin
 
 ## Running
 
-Run `node .` or `npm run start`. To run the web interface, navigate to the `web` directory and run `node server.js`.
+To run any of the programs, navigate to it's directory and run `node .` or `npm run start`.
+
+Please note that both `bot` depends on `db`.
