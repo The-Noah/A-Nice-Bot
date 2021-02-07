@@ -17,13 +17,9 @@
     "discord",
     "bot"
   ],
-  "author": "The Noah",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/The-Noah/A-Nice-Bot/issues"
+  "author": "idkwhattoputhere121",
   },
-  "website": "http://anicebot.freemyip.com:8080/",
-  "homepage": "https://github.com/The-Noah/A-Nice-Bot#readme",
+  "homepage": "https://github.com/idkwhattoputhere121/CatPopBot/blob/main/README.md",
   "dependencies": {
     "discord.js": "^11.4.2",
     "node-fetch": "^2.3.0",
