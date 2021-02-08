@@ -14,14 +14,14 @@ module.exports = {
       .setColor("#0099FF")
       .setTitle("Info")
       .setURL(website)
-      .setAuthor(author, "https://avatars3.githubusercontent.com/u/35819660", homepage)
+      .setAuthor(author, "", homepage)
       .setDescription("**ONLINE**")
       .attachFile("./avatar.png")
       .setThumbnail("attachment://avatar.png")
       .addField("Bot", `${name} v${version}`)
       .addField("Platform", process.platform)
       .setTimestamp()
-      .setFooter("Origonal bot created by The Noah", "https://avatars3.githubusercontent.com/u/35819660");
+      .setFooter("Origonal bot created by Bongo", "");
     
     message.channel.send(embed);
   },
